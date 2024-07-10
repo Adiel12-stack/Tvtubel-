@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch & Earn</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="//cdn.tsyndicate.com/sdk/v1/interstitial.ts.css" />
+    <script src="//cdn.tsyndicate.com/sdk/v1/interstitial.ts.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Watch Videos and Earn Money</h1>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        
+        <div id="video-section" style="display: none;">
+            <h2>Watch Video</h2>
+            <video id="video" width="600" controls>
+                <source src="path/to/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div id="ad-container"></div>
+            <button id="withdraw-button" style="display: none;">Withdraw to DANA</button>
+        </div>
+    </div>
+
+    <script>
+        // Initialize the ad when the document is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            InterstitialTsAd({
+                spot: "92a7278c47e442d08586187153de0bd5",
+                keywords: "",
+                subid: "",
+                extid: "",
+                countdown: 15,
+                countClicks: 0,
+                cookieExpires: 6,
+                ignoreFilter: ""
+            });
+        });
+    </script>
+</body>
+</html>
